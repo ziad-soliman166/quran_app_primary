@@ -10,4 +10,10 @@ class AssetsManager {
   static const String sebhaIcon = "${base}body_of_seb7a.png";
   static const String sebhaHeader = "${base}head_of_seb7a.png";
   static const String hadithHeader = "${base}hadith_header.png";
+  static const String radioHeader = "${base}radio_icon_image.png";
+  static const String playIcon = "${base}play.png";
+  static const String backIcon = "${base}back.png";
+  static const String nextIcon = "${base}next.png";
+  static const String backgroundDarkScreen = "${base}home_dark_background.png";
+  static const String splashDarkScreen = "${base}splash _darktheme.png";
 }

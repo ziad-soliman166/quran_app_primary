@@ -57,6 +57,8 @@ class _homeScreenState extends State<homeScreen> {
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage(AssetsManager.radioScreen)),
                 label: stringsManager.radioIcon),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), label: "settings"),
           ],
         ),
         body: tabs[selectedIndex],

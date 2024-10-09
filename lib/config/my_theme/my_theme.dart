@@ -31,7 +31,7 @@ class myTheme {
         fontWeight: FontWeight.w400,
       ),
       bodyMedium: TextStyle(
-          color: Colors.white, fontWeight: FontWeight.w400, fontSize: 19),
+          color: Colors.black, fontWeight: FontWeight.w400, fontSize: 25),
     ),
     cardTheme: CardTheme(
       margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),

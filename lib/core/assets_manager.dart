@@ -9,4 +9,5 @@ class AssetsManager {
   static const String quranHeaderIcon = "${base}quran_header_icon.png";
   static const String sebhaIcon = "${base}body_of_seb7a.png";
   static const String sebhaHeader = "${base}head_of_seb7a.png";
+  static const String hadithHeader = "${base}hadith_header.png";
 }

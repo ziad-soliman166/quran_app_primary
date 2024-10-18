@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/hadith_tab/hadith_tab.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/quran_tab/quran_tab.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/radio_tab/radio_tab.dart';
@@ -7,7 +8,6 @@ import 'package:quran_application_primary/presentation/home_screen/tabs/settings
 
 import '../../core/assets_manager.dart';
 import '../../core/colors_manager.dart';
-import '../../core/strings_manger.dart';
 
 class homeScreen extends StatefulWidget {
   const homeScreen({super.key});
@@ -36,7 +36,7 @@ class _homeScreenState extends State<homeScreen> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(stringsManager.appTitle),
+          title: Text(AppLocalizations.of(context)!.titleApp),
         ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: colorsManager.goldColor,
@@ -46,21 +46,22 @@ class _homeScreenState extends State<homeScreen> {
             selectedIndex = index;
             setState(() {});
           },
-          items: const [
+          items: [
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage(AssetsManager.quranScreen)),
-                label: stringsManager.quranIcon),
+                label: AppLocalizations.of(context)!.quranTab),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage(AssetsManager.hadithScreen)),
-                label: stringsManager.hadithIcon),
+                label: AppLocalizations.of(context)!.hadithTab),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage(AssetsManager.sebhaScreen)),
-                label: stringsManager.sebhaIcon),
+                label: AppLocalizations.of(context)!.sebhaTab),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage(AssetsManager.radioScreen)),
-                label: stringsManager.radioIcon),
+                label: AppLocalizations.of(context)!.radioTab),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: "settings"),
+                icon: Icon(Icons.settings),
+                label: AppLocalizations.of(context)!.settingsTab),
           ],
         ),
         body: tabs[selectedIndex],

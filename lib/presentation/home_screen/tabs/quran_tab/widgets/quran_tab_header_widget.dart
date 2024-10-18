@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../../core/colors_manager.dart';
-import '../../../../../core/strings_manger.dart';
 
 class quranTabHeaderWidget extends StatelessWidget {
   const quranTabHeaderWidget({super.key});
@@ -22,7 +22,7 @@ class quranTabHeaderWidget extends StatelessWidget {
           children: [
             Expanded(
                 child: Text(
-              stringsManager.versesNumberLabel,
+              AppLocalizations.of(context)!.versesNumber,
               style: Theme.of(context).textTheme.labelMedium,
               textAlign: TextAlign.center,
             )),
@@ -33,7 +33,7 @@ class quranTabHeaderWidget extends StatelessWidget {
             ),
             Expanded(
                 child: Text(
-              stringsManager.chapterNameLabel,
+              AppLocalizations.of(context)!.chapterName,
               style: Theme.of(context).textTheme.labelMedium,
               textAlign: TextAlign.center,
             )),

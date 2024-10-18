@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ThemeButtomSheet extends StatelessWidget {
   const ThemeButtomSheet({super.key});
@@ -10,11 +11,13 @@ class ThemeButtomSheet extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          buildSelectedThemeWidget(context, "Light"),
+          buildSelectedThemeWidget(
+              context, AppLocalizations.of(context)!.light),
           const SizedBox(
             height: 20,
           ),
-          buildUnSelectedThemeWidget(context, "Dark"),
+          buildUnSelectedThemeWidget(
+              context, AppLocalizations.of(context)!.dark),
         ],
       ),
     );

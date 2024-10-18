@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:quran_application_primary/core/colors_manager.dart';
 
 class hadithHeader extends StatelessWidget {
@@ -19,7 +20,7 @@ class hadithHeader extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              "الأحاديث",
+              AppLocalizations.of(context)!.hadithHeader,
               textAlign: TextAlign.center,
             ),
           ),

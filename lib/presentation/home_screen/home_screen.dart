@@ -3,6 +3,7 @@ import 'package:quran_application_primary/presentation/home_screen/tabs/hadith_t
 import 'package:quran_application_primary/presentation/home_screen/tabs/quran_tab/quran_tab.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/radio_tab/radio_tab.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/sebha_tab/sebha_tab.dart';
+import 'package:quran_application_primary/presentation/home_screen/tabs/settings_tab/settings_tab.dart';
 
 import '../../core/assets_manager.dart';
 import '../../core/colors_manager.dart';
@@ -22,6 +23,7 @@ class _homeScreenState extends State<homeScreen> {
     HadithTab(),
     SebhaTab(),
     RadioTab(),
+    SettingsTab(),
   ];
   @override
   Widget build(BuildContext context) {

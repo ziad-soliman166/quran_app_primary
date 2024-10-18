@@ -8,10 +8,10 @@ class RadioTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 200),
+      margin: const EdgeInsets.symmetric(vertical: 200),
       child: Column(
         children: [
-          Stack(
+          const Stack(
             alignment: Alignment.center,
             children: [
               Image(image: AssetImage(AssetsManager.radioHeader)),
@@ -27,10 +27,10 @@ class RadioTab extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ImageIcon(

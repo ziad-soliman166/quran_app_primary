@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/settings_tab/widgets/language_Buttom_Sheet.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/settings_tab/widgets/theme_buttom_sheet.dart';
 
@@ -14,7 +15,8 @@ class SettingsTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Theme", style: Theme.of(context).textTheme.headlineMedium),
+          Text(AppLocalizations.of(context)!.theme,
+              style: Theme.of(context).textTheme.headlineMedium),
           const SizedBox(
             height: 5,
           ),
@@ -30,7 +32,7 @@ class SettingsTab extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Text(
-                "Light",
+                AppLocalizations.of(context)!.light,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
             ),
@@ -38,7 +40,8 @@ class SettingsTab extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Text("Language", style: Theme.of(context).textTheme.headlineMedium),
+          Text(AppLocalizations.of(context)!.language,
+              style: Theme.of(context).textTheme.headlineMedium),
           const SizedBox(
             height: 5,
           ),
@@ -54,7 +57,7 @@ class SettingsTab extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Text(
-                "English",
+                AppLocalizations.of(context)!.english,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
             ),

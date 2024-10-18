@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../config/my_theme/my_theme.dart';
 import '../core/routes_manager.dart';
@@ -24,6 +25,12 @@ class quranApp extends StatelessWidget {
         routeManager.hadithDetailsScreen: (_) => hadithDetailsScreen(),
       },
       initialRoute: routeManager.splashScreen,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: [
+        Locale('en'),
+        Locale('ar'),
+      ],
+      locale: Locale('ar'),
     );
   }
 }

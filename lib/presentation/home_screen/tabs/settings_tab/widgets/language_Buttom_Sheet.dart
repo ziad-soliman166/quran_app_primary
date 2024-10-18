@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LanguageButtomSheet extends StatelessWidget {
   const LanguageButtomSheet({super.key});
@@ -10,11 +11,12 @@ class LanguageButtomSheet extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          buildSelectedLanguage(context, "English"),
+          buildSelectedLanguage(context, AppLocalizations.of(context)!.english),
           const SizedBox(
             height: 20,
           ),
-          buildUnSelectedLanguage(context, "Arabic"),
+          buildUnSelectedLanguage(
+              context, AppLocalizations.of(context)!.arabic),
         ],
       ),
     );

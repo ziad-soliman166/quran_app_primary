@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/settings_tab/widgets/language_Buttom_Sheet.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/settings_tab/widgets/theme_buttom_sheet.dart';
-
-import '../../../../core/colors_manager.dart';
+import 'package:quran_application_primary/providers/settings_provider.dart';
 
 class SettingsTab extends StatelessWidget {
   const SettingsTab({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var myProvider = Provider.of<SettingsProvider>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 50),
       child: Column(
@@ -28,11 +29,14 @@ class SettingsTab extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
               width: double.infinity,
               decoration: BoxDecoration(
-                border: Border.all(color: colorsManager.goldColor, width: 2),
+                border:
+                    Border.all(color: Theme.of(context).dividerColor, width: 2),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Text(
-                AppLocalizations.of(context)!.light,
+                myProvider.isLightTheme()
+                    ? AppLocalizations.of(context)!.light
+                    : AppLocalizations.of(context)!.dark,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
             ),
@@ -53,11 +57,14 @@ class SettingsTab extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
               width: double.infinity,
               decoration: BoxDecoration(
-                border: Border.all(color: colorsManager.goldColor, width: 2),
+                border:
+                    Border.all(color: Theme.of(context).dividerColor, width: 2),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Text(
-                AppLocalizations.of(context)!.english,
+                myProvider.currentLanguage == 'en'
+                    ? AppLocalizations.of(context)!.english
+                    : AppLocalizations.of(context)!.arabic,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
             ),

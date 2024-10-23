@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/hadith_tab/hadith_tab.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/quran_tab/quran_tab.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/radio_tab/radio_tab.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/sebha_tab/sebha_tab.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/settings_tab/settings_tab.dart';
+import 'package:quran_application_primary/providers/settings_provider.dart';
 
 import '../../core/assets_manager.dart';
-import '../../core/colors_manager.dart';
 
 class homeScreen extends StatefulWidget {
   const homeScreen({super.key});
@@ -27,11 +28,14 @@ class _homeScreenState extends State<homeScreen> {
   ];
   @override
   Widget build(BuildContext context) {
+    var myProvider = Provider.of<SettingsProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.fill,
-          image: AssetImage(AssetsManager.backgroundScreen),
+          image: AssetImage(myProvider.isLightTheme()
+              ? AssetsManager.backgroundScreen
+              : AssetsManager.backgroundDarkScreen),
         ),
       ),
       child: Scaffold(
@@ -39,7 +43,7 @@ class _homeScreenState extends State<homeScreen> {
           title: Text(AppLocalizations.of(context)!.titleApp),
         ),
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: colorsManager.goldColor,
+          backgroundColor: Theme.of(context).primaryColor,
           type: BottomNavigationBarType.fixed,
           currentIndex: selectedIndex,
           onTap: (index) {

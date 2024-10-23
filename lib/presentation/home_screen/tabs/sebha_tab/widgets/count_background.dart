@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quran_application_primary/core/colors_manager.dart';
 
 typedef CountFunc = String Function(int);
 
@@ -19,7 +18,7 @@ class countBackground extends StatelessWidget {
       width: 60,
       height: 90,
       decoration: BoxDecoration(
-        color: colorsManager.goldColor,
+        color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(15),
       ),
       child: Center(

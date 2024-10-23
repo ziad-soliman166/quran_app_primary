@@ -31,14 +31,14 @@ class _HadithTabState extends State<HadithTab> {
               child: allHadithList.isEmpty
                   ? Center(
                       child: CircularProgressIndicator(
-                        color: colorsManager.goldColor,
+                        color: colorsManager.lightPrimary,
                       ),
                     )
                   : ListView.separated(
                       itemBuilder: (context, index) =>
                           hadithTitleWidget(hadith: allHadithList[index]),
                       separatorBuilder: (context, index) => Divider(
-                            color: colorsManager.goldColor,
+                            color: Theme.of(context).dividerColor,
                             thickness: 3,
                             height: 6,
                           ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+import 'package:quran_application_primary/providers/settings_provider.dart';
 
 import '../config/my_theme/my_theme.dart';
 import '../core/routes_manager.dart';
@@ -13,9 +15,11 @@ class quranApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var myProvider = Provider.of<SettingsProvider>(context);
     return MaterialApp(
       theme: myTheme.lightTheme,
-      themeMode: ThemeMode.system,
+      darkTheme: myTheme.darkTheme,
+      themeMode: myProvider.currentTheme,
       debugShowCheckedModeBanner: false,
       title: "Quran App",
       routes: {
@@ -30,7 +34,7 @@ class quranApp extends StatelessWidget {
         Locale('en'),
         Locale('ar'),
       ],
-      locale: Locale('ar'),
+      locale: Locale(myProvider.currentLanguage),
     );
   }
 }

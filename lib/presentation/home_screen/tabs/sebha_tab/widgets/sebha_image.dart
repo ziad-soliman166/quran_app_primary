@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:quran_application_primary/providers/settings_provider.dart';
 
 import '../../../../../core/assets_manager.dart';
 
@@ -9,6 +11,7 @@ class SebhaImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var myProvider = Provider.of<SettingsProvider>(context);
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 55, vertical: 20),
       child: Stack(
@@ -20,17 +23,21 @@ class SebhaImage extends StatelessWidget {
             height: 280,
             child: Transform.rotate(
               angle: rotationAngle,
-              child: const Image(
+              child: Image(
                 image: AssetImage(
-                  AssetsManager.sebhaIcon,
+                  myProvider.currentTheme == ThemeMode.light
+                      ? AssetsManager.sebhaIcon
+                      : AssetsManager.sebhaDarkImage,
                 ),
               ),
             ),
           ),
-          const Positioned(
+          Positioned(
             top: -40,
             child: Image(
-              image: AssetImage(AssetsManager.sebhaHeader),
+              image: AssetImage(myProvider.currentTheme == ThemeMode.light
+                  ? AssetsManager.sebhaHeader
+                  : AssetsManager.headOfSebhaDark),
               width: 150,
             ),
           ),

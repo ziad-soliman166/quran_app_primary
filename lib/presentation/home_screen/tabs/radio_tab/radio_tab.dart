@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quran_application_primary/core/assets_manager.dart';
-import 'package:quran_application_primary/core/colors_manager.dart';
 
 class RadioTab extends StatelessWidget {
   const RadioTab({super.key});
@@ -30,12 +29,12 @@ class RadioTab extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ImageIcon(
                 AssetImage(AssetsManager.backIcon),
-                color: colorsManager.goldColor,
+                color: Theme.of(context).dividerColor,
                 size: 30,
               ),
               SizedBox(
@@ -43,7 +42,7 @@ class RadioTab extends StatelessWidget {
               ),
               ImageIcon(
                 AssetImage(AssetsManager.playIcon),
-                color: colorsManager.goldColor,
+                color: Theme.of(context).dividerColor,
                 size: 30,
               ),
               SizedBox(
@@ -52,7 +51,7 @@ class RadioTab extends StatelessWidget {
               ImageIcon(
                 AssetImage(AssetsManager.nextIcon),
                 size: 30,
-                color: colorsManager.goldColor,
+                color: Theme.of(context).dividerColor,
               ),
             ],
           ),

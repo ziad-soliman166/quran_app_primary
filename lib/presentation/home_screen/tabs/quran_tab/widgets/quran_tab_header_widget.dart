@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../../../../core/colors_manager.dart';
-
 class quranTabHeaderWidget extends StatelessWidget {
   const quranTabHeaderWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         border: Border.symmetric(
           horizontal: BorderSide(
-            color: colorsManager.goldColor,
+            color: Theme.of(context).dividerColor,
             width: 2,
           ),
         ),

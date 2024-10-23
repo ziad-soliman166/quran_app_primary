@@ -16,4 +16,6 @@ class AssetsManager {
   static const String nextIcon = "${base}next.png";
   static const String backgroundDarkScreen = "${base}home_dark_background.png";
   static const String splashDarkScreen = "${base}splash _darktheme.png";
+  static const String sebhaDarkImage = "${base}seb7a_dark.png";
+  static const String headOfSebhaDark = "${base}head_of_sebha_dark.png";
 }

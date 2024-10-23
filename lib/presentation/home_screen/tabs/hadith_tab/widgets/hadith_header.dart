@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:quran_application_primary/core/colors_manager.dart';
 
 class hadithHeader extends StatelessWidget {
   const hadithHeader({super.key});
@@ -8,10 +7,10 @@ class hadithHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         border: Border.symmetric(
           horizontal: BorderSide(
-            color: colorsManager.goldColor,
+            color: Theme.of(context).dividerColor,
             width: 3,
           ),
         ),

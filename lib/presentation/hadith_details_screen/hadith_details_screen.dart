@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:quran_application_primary/core/assets_manager.dart';
 import 'package:quran_application_primary/core/strings_manger.dart';
 import 'package:quran_application_primary/presentation/home_screen/tabs/hadith_tab/hadith_tab.dart';
+import 'package:quran_application_primary/providers/settings_provider.dart';
 
 class hadithDetailsScreen extends StatelessWidget {
   const hadithDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var myProvider = Provider.of<SettingsProvider>(context);
     Hadith hadith = ModalRoute.of(context)?.settings.arguments as Hadith;
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(AssetsManager.backgroundScreen),
+          image: AssetImage(myProvider.isLightTheme()
+              ? AssetsManager.backgroundScreen
+              : AssetsManager.backgroundDarkScreen),
         ),
       ),
       child: Scaffold(
@@ -29,8 +34,8 @@ class hadithDetailsScreen extends StatelessWidget {
                     hadith.title,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
-                  const Divider(
-                    color: Colors.black,
+                  Divider(
+                    color: Theme.of(context).dividerColor,
                     thickness: 2,
                     height: 3,
                     endIndent: 40,

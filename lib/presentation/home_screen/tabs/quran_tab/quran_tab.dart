@@ -3,7 +3,6 @@ import 'package:quran_application_primary/presentation/home_screen/tabs/quran_ta
 import 'package:quran_application_primary/presentation/home_screen/tabs/quran_tab/widgets/quran_tab_header_widget.dart';
 
 import '../../../../core/assets_manager.dart';
-import '../../../../core/colors_manager.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -253,7 +252,7 @@ class QuranTab extends StatelessWidget {
                 separatorBuilder: (context, index) => Container(
                   width: double.infinity,
                   height: 3,
-                  color: colorsManager.goldColor,
+                  color: Theme.of(context).dividerColor,
                 ),
                 itemBuilder: (context, index) => quranItem(
                   suraItem: SuraItem(

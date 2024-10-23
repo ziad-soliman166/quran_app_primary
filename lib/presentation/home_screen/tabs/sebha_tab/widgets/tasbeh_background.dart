@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/colors_manager.dart';
-
 class TabsehBackground extends StatelessWidget {
   final VoidCallback onIncrement;
   final String label;
@@ -19,7 +17,7 @@ class TabsehBackground extends StatelessWidget {
       width: 200,
       height: 55,
       decoration: BoxDecoration(
-        color: colorsManager.goldColor,
+        color: Theme.of(context).dividerColor,
         borderRadius: BorderRadius.circular(15),
       ),
       child: InkWell(
@@ -27,7 +25,7 @@ class TabsehBackground extends StatelessWidget {
         child: Center(
           child: Text(
             label,
-            style: const TextStyle(color: Colors.white),
+            style: Theme.of(context).textTheme.displaySmall,
           ),
         ),
       ),
